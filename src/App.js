@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Timeline from "./components/timeline/Timeline";
 
 function App() {
+  let events = [
+    {
+      name: "first event",
+      date: "2012-03-01",
+      positionY: "0",
+    },
+
+    { name: "second event", date: "2011-04-20", positionY: "3rem" },
+  ];
+
+  let periods = [
+    {
+      name: "first period",
+      startDate: "2002-01-01",
+      endDate: "2007-12-16",
+      positionY: "3rem",
+      bg: "lightyellow",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Timeline
+        title="My Timeline"
+        startDate="1996-01-01"
+        endDate="2022-01-01"
+        bg="lightgrey"
+        height="6rem"
+        events={events}
+        periods={periods}
+        intervals={{ showIntervals: true, interval: 5 }}
+      ></Timeline>
     </div>
   );
 }
