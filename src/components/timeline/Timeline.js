@@ -18,12 +18,13 @@ function getDays(date1, date2) {
 }
 
 function getYears(date1, date2, interval) {
-  const year1 = Number(date1.split("-")[0]);
-  const year2 = Number(date2.split("-")[0]);
+  const year1 = date1.year;
+  const year2 = date2.year;
   const years = year2 - year1;
   let arr = [];
   for (let i = 0; i < years; i = i + interval) {
-    arr.push({ date: `${year1 + i}-01-01`, year: year1 + i });
+    let date = { year: year1 + i, month: 1, day: 2 };
+    arr.push({ date: date, year: year1 + i });
   }
   return arr;
 }

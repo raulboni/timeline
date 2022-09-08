@@ -4,18 +4,16 @@ function App() {
   let events = [
     {
       name: "first event",
-      date: "2012-03-01",
+      date: { year: 40, month: 1, day: 1 },
       positionY: "0",
     },
-
-    { name: "second event", date: "2011-04-20", positionY: "3rem" },
   ];
 
   let periods = [
     {
       name: "first period",
-      startDate: "2002-01-01",
-      endDate: "2007-12-16",
+      startDate: { year: 10, month: 1, day: 1 },
+      endDate: { year: 50, month: 1, day: 1 },
       positionY: "3rem",
       bg: "lightyellow",
     },
@@ -25,13 +23,13 @@ function App() {
     <div className="container">
       <Timeline
         title="My Timeline"
-        startDate="1996-01-01"
-        endDate="2022-01-01"
+        startDate={{ year: 0, month: 1, day: 1 }}
+        endDate={{ year: 200, month: 1, day: 1 }}
         bg="lightgrey"
         height="6rem"
         events={events}
         periods={periods}
-        intervals={{ showIntervals: true, interval: 5 }}
+        intervals={{ showIntervals: true, interval: 50 }}
       ></Timeline>
     </div>
   );
